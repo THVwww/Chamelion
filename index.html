@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Добро пожаловать на наш удивительный сайт. Здесь вы найдете много интересного и полезного контента."
+    />
+    <title>Ovi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      body {
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: whitesmoke;
+          scroll-behavior: smooth;
+      }
+      header {
+          background: #3c4458;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+      }
+      nav {
+          display: flex;
+          justify-content: center;
+          background: #444;
+          padding: 10px 0;
+      }
+      nav a {
+          margin: 0 15px;
+          text-decoration: none;
+          color: #fff;
+          padding: 10px 15px;
+          border-radius: 5px;
+          transition: background 0.3s, transform 0.3s;
+      }
+      nav a:hover {
+          background: #555;
+          transform: scale(1.1);
+      }
+      main {
+          padding: 20px;
+          margin: 20px auto;
+          background-color: whitesmoke;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          position: relative;
+          overflow: hidden;
+          animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+      .content {
+          text-align: center;
+          margin: 20px 0;
+      }
+      .service-section {
+          background: url("xiaomi-pad-7-pro-3840x2160-19801.jpg");
+          padding: 50px 0;
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          backdrop-filter: ;
+      }
+      .service {
+          display: inline-block;
+          width: 30%;
+          margin: 15px;
+          padding: 20px;
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+          opacity: 0;
+          animation: slideIn 0.5s forwards;
+          text-align: center;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(20px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+      .service h3 {
+          color: #333;
+          margin-top: 10px;
+      }
+      .service p {
+          color: #666;
+      }
+      .service ul {
+          list-style-type: none;
+          padding: 0;
+          color: #555;
+      }
+      .service-button {
+          background-color: #4a90e2;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s;
+      }
+      .service-button:hover {
+          background-color: #388ae3;
+      }
+      .service:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      footer {
+          text-align: center;
+          padding: 20px 0;
+          background: #333;
+          color: #fff;
+          margin-top: 40px;
+      }
+      .testimonial {
+          margin-bottom: 20px;
+          text-align: left;
+      }
+      .testimonials {
+          padding: 40px 20px;
+          background-color: #e9ecef;
+          margin-top: 40px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .site-header {
+          background: linear-gradient(to right, rgba(70, 0, 128, 0.9), rgba(0, 11, 22, 0.7));
+          color: white;
+          padding: 15px 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .logo  {
+          height: 80px;
+          font-size: 1.6rem;
+          margin-top: -20px;
+          color: rosybrown;
+          text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+          transform: translateX(10%);
+          transform: translateY(-10%);
+          cursor: pointer;
+          font-family: 'Trebuchet MS';
+      }
+      .logo:hover{
+        color: #e9ecef;
+      }
+
+      .nav-menu ul {
+          list-style-type: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+      }
+      .nav-menu li {
+          margin: 0 15px;
+      }
+      .nav-menu a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.3s, transform 0.3s;
+      }
+      .nav-menu a:hover {
+          color: #FFCC00;
+          transform: scale(1.05);
+      }
+      .contact-button {
+          margin-left: 350px;
+          background-color: #FFCC00;
+          color: black;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s, transform 0.3s;
+      }
+      .contact-button:hover {
+          background-color: #FFC300;
+          transform: scale(1.05);
+      }
+      .social-icons {
+          display: flex;
+      }
+      .social-icon {
+          color: white;
+          text-decoration: none;
+          margin-left: 15px;
+          font-size: 18px;
+          transition: color 0.3s;
+      }
+      .social-icon:hover {
+          color: #FFCC00;
+      }
+      .search {
+          margin-left: 550px;
+          width: 500px;
+          height: 20px;
+          font-family: 'Roboto Slab', serif;
+          font-style: italic;
+          text-transform: uppercase;
+          border-radius: 25px 0 0 25px;
+      }
+      .search:hover {
+        color: red;
+      }
+      .search-button {
+          margin-right: 25px;
+          padding: 5px 10px;
+          background-color: #fff;
+          color: rgb(7, 7, 7);
+          border: none;
+          border-radius: 0 25px 25px 0;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+      .search-button:hover {
+          background-color: #0056b3;
+      }
+      .London{
+          margin-left: 100px;
+          cursor: pointer;
+      }
+      .Olimp {
+          cursor: pointer;
+      }
+      .games-section {
+      text-align: center;
+
+      }
+      .fort{
+          text-align: left;
+      }
+      .games-section{
+        background-color: #e9ecef ;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">
+        <h1>OVI</h1>
+      </div>
+      <input class="search" type="text" placeholder="Search..." />
+      <button class="search-button" aria-label="Начать поиск">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="contact-button">Связаться с нами</button>
+      <div class="social-icons">
+        <a href="http://www.facebook.com" target="_blank" class="social-icon"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="http://www.twitter.com" target="_blank" class="social-icon"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="http://www.instagram.com" target="_blank" class="social-icon"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </header>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#courses">Курсы</a>
+      <a href="#movies">Movies</a>
+      <a href="#Games">Games</a>
+      <a href="#contact">Контакты</a>
+      <a href="" class="profile"
+        ><i class="fa-solid fa-user fa-beat-fade"></i
+      ></a>
+    </nav>
+    <main>
+      <div class="content" id="home">
+        <h2>Добро Пожаловать!</h2>
+        <p>Здесь вы найдете много интересного и полезного контента.</p>
+      </div>
+
+      <div id="courses" class="service-section">
+        <h2 style="text-align: center; margin-bottom: 30px">Курсы</h2>
+        <div class="service" style="animation-delay: 0.2s">
+          <i class="fas fa-code fa-3x" style="color: #4a90e2"></i>
+          <h3>Frontend</h3>
+          <p>Создаем интуитивно понятные интерфейсы для пользователей.</p>
+          <ul>
+            <li>Современные технологии</li>
+            <li>Адаптивный дизайн</li>
+          </ul>
+          <button class="service-button">Узнать больше</button>
+        </div>
+        <div class="service" style="animation-delay: 0.4s">
+          <i class="fas fa-server fa-3x" style="color: #d75b24"></i>
+          <h3>Backend</h3>
+          <p>Разрабатываем надежные серверные решения.</p>
+          <ul>
+            <li>Обработка данных</li>
+            <li>API интеграция</li>
+          </ul>
+          <button class="service-button">Узнать больше</button>
+        </div>
+        <div class="service" style="animation-delay: 0.6s">
+          <i class="fas fa-database fa-3x" style="color: #7ed321"></i>
+          <h3>Database</h3>
+          <p>Интегрируем и оптимизируем базы данных.</p>
+          <ul>
+            <li>Высокая производительность</li>
+            <li>Надежные решения</li>
+          </ul>
+          <button class="service-button">Узнать больше</button>
+        </div>
+      </div>
+      <div class="testimonials" id="movies">
+        <h2 style="text-align: center; margin-top: 40px">Movies</h2>
+        <div class="testimonial">
+          <a href="https://vk.com/video-220018529_456240413">
+            <img class="Olimp" src="Снимок экрана от 2024-11-29 10-59-46.png"
+          /></a>
+          <a href="https://vk.com/video-220018529_456241849">
+            <img class="London" src="Снимок экрана от 2024-11-29 12-00-04.png"
+          /></a>
+          <img src="image3.jpg" alt="" />
+        </div>
+      </div>
+
+      <div id="Games" class="games-section">
+        <h2>Games</h2>
+        <a href="https://store.epicgames.com/ru/p/fortnite">
+          <img
+            class="fort"
+            src="Снимок экрана от 2024-11-29 14-14-19.png"
+            alt=""
+        /></a>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Мой Ультра Улучшенный Сайт</p>
+      <p>
+        <a href="#privacy">Политика конфиденциальности</a> |
+        <a href="#terms">Условия использования</a>
+      </p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('Сайт загружен!');
+        const services = document.querySelectorAll('.service');
+        services.forEach((service, index) => {
+          service.style.animationDelay = `${index * 0.2}s`;
+        });
+      });
+    </script>
+  </body>
+</html>
