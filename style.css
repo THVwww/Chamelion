@@ -1,0 +1,428 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    scroll-behavior: smooth;
+    
+}
+header {
+    background: #3c4458;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    padding: 10px 0;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+ nav a:hover {
+    background: #555;
+    transform: scale(1.1);
+
+} 
+
+main {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+}
+.content {
+    text-align: center;
+    margin: 20px 0;
+}
+.service-section {
+    background: blur(20%);
+    padding: 50px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   
+}
+.service {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+    text-align: center;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.service h3 {
+    color: #333;
+    margin-top: 10px;
+}
+.service p {
+    color: #666;
+}
+.service ul {
+    list-style-type: none;
+    padding: 0;
+    color: #555;
+}
+.service-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.service-button:hover {
+    background-color: #388ae3;
+}
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+.testimonial {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.testimonials {
+    padding: 40px 20px;
+    background: blur(20%);
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.site-header {
+    
+    background: linear-gradient(217deg, rgba(0, 0, 0, 0.8), rgba(255,0,0,0) 70.71%),
+      linear-gradient(127deg, rgba(66, 11, 11, 0.8), rgba(0,255,0,0) 70.71%),
+      linear-gradient(336deg, rgba(95, 95, 128, 0.8), rgba(0,0,255,0) 70.71%);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.logo  {
+    height: 80px;
+    font-size: 1.6rem;
+    margin-top: -20px;
+  
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(10%);
+    transform: translateY(-10%);
+    cursor: pointer;
+    font-family: 'Trebuchet MS';
+   
+}
+.logo:hover{
+  color: #e9ecef;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+
+
+.contact-button {
+    margin-left: 350px;
+    background-color: #FFCC00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateX(100px);
+   box-shadow: 0 0 25px #FFCC00, 0 0 30px #FFCC00, 0 0 35px #e66465;
+}
+.contact-button:hover {
+    background-color: #FFC300;
+}
+.social-icons {
+    display: flex;
+    transform: translateX(10px);
+}
+.social-icon {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.social-icon:hover {
+    color: #FFCC00;
+}
+.search {
+    margin-left: 122px;
+    width: 500px;
+    height: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    text-transform: uppercase;
+    border-radius: 25px 0 0 25px;
+  }
+  .search:hover {
+  color: red;
+  background: white;
+}
+.search-button {
+    margin-left: -96px;
+    padding: 5px 10px;
+    background: linear-gradient(#fff, #000);
+    color: rgb(7, 7, 7);
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.search-button:hover {
+    background-color: #0056b3;
+    
+}
+.London{
+    margin-left: 100px;
+    cursor: pointer;
+}
+.Olimp {
+    cursor: pointer;
+}
+.games-section {
+text-align: center;
+border-radius: 8px;
+ background: blur(20%);
+}
+.fort{
+    text-align: left;
+}
+
+.cham   {
+  border-radius: 40%;
+   box-shadow: 0 0 20px #fff, 0 0 25px #fff, 0 0 35px #fff;
+   background: whitesmoke;
+   color: #000;
+}
+.regist {
+  background-color: #FFC300;
+  border-radius: 10%;
+  box-shadow: 0 0 25px #FFCC00, 0 0 30px #FFCC00, 0 0 35px #e66465;
+  transform: translateX(540px);
+  border: none;
+}
+.registration-form {
+display: none; /* Скрыта по умолчанию */
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+z-index: 1000;
+width: 300px;
+height: 300px;
+}
+.registration-form h3 {
+margin-bottom: 15px;
+color: black;
+transform: translateX(30%);
+}
+.registration-form input,
+.registration-form button {
+display: block;
+width: 90%;
+margin-bottom: 10px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.registration-form button {
+background-color: #FFCC00;
+color: white;
+border: none;
+cursor: pointer;
+}
+.registration-form button:hover {
+background-color: #FFCC00;
+}
+.overlayx {
+display: none; /* Скрыто по умолчанию */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
+
+}
+/* Анимации */
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+.fade-in {
+animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+nav {
+  flex-direction: column;
+}
+nav a {
+  padding: 10px;
+  text-align: center;
+}
+.section {
+  padding: 10px;
+}
+}
+.blurred {
+    filter: blur(5px); /* Размытие фона */
+    pointer-events: none; /* Отключаем взаимодействие с размытым контентом */
+  }
+  /* Стили для движущихся элементов */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачные круги */
+    animation: move 10s infinite ease-in-out; /* Анимация движения */
+  }
+
+  /* Разные размеры и позиции для кругов */
+  .circle:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    top: 10%;
+    left: 20%;
+    animation-duration: 5s;
+  }
+
+  .circle:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 30%;
+    left: 70%;
+    animation-duration: 6s;
+  }
+
+  .circle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    left: 40%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    top: 66%;
+    left: 95%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(5) {
+    width: 60px;
+    height: 60px;
+    top: 72%;
+    left: 100%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(6) {
+    width: 60px;
+    height: 60px;
+    top: 93%;
+    left: 75%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(7) {
+    width: 60px;
+    height: 60px;
+    top: 37%;
+    left: 82%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(8) {
+    width: 60px;
+    height: 60px;
+    top: 39%;
+    left: 36%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(9) {
+    width: 60px;
+    height: 60px;
+    top: 52%;
+    left: 14%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(10) {
+    width: 60px;
+    height: 60px;
+    top: 64%;
+    left: 9%;
+    animation-duration: 7s;
+  }
+  .circle:nth-child(11) {
+    width: 60px;
+    height: 60px;
+    top: 90%;
+    left: 1%;
+    animation-duration: 7s;
+  }
+/* Анимация движения */
+@keyframes move {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(100px) translateX(100px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    
+  }

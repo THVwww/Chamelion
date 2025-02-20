@@ -10,6 +10,7 @@
     <title>Chamelion</title>
     <link rel="website icon" type="png"
     href="chameleon.png">
+    <link rel="stylesheet" href="style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -18,254 +19,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     />
-    <style>
-      body {
-          font-family: 'Roboto', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: whitesmoke;
-          scroll-behavior: smooth;
-          
-      }
-      header {
-          background: #3c4458;
-          color: #fff;
-          padding: 20px;
-          text-align: center;
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-      }
-      nav {
-          display: flex;
-          justify-content: center;
-          background: #444;
-          padding: 10px 0;
-      }
-      nav a {
-          margin: 0 15px;
-          text-decoration: none;
-          color: #fff;
-          padding: 10px 15px;
-          border-radius: 5px;
-          transition: background 0.3s, transform 0.3s;
-      }
-       nav a:hover {
-          background: #555;
-          transform: scale(1.1);
-
-      } 
-      
-      main {
-        background: url(ruvim-noga-pazM9TQJ2Ck-unsplash.jpg);;
-        padding: 20px;
-        margin: 20px auto;
-        background-color: whitesmoke;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        position: relative;
-        overflow: hidden;
-        animation: fadeIn 0.5s ease-in-out;
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-      }
-      .content {
-          text-align: center;
-          margin: 20px 0;
-      }
-      .service-section {
-          background: blur(20%);
-          padding: 50px 0;
-          border-radius: 8px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-         
-      }
-      .service {
-          display: inline-block;
-          width: 30%;
-          margin: 15px;
-          padding: 20px;
-          background: #fff;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s, box-shadow 0.3s;
-          opacity: 0;
-          animation: slideIn 0.5s forwards;
-          text-align: center;
-      }
-      @keyframes slideIn {
-          from {
-              transform: translateY(20px);
-              opacity: 0;
-          }
-          to {
-              transform: translateY(0);
-              opacity: 1;
-          }
-      }
-      .service h3 {
-          color: #333;
-          margin-top: 10px;
-      }
-      .service p {
-          color: #666;
-      }
-      .service ul {
-          list-style-type: none;
-          padding: 0;
-          color: #555;
-      }
-      .service-button {
-          background-color: #4a90e2;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background 0.3s;
-      }
-      .service-button:hover {
-          background-color: #388ae3;
-      }
-      .service:hover {
-          transform: scale(1.05);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-      
-      footer {
-          text-align: center;
-          padding: 20px 0;
-          background: #333;
-          color: #fff;
-          margin-top: 40px;
-      }
-      .testimonial {
-          margin-bottom: 20px;
-          text-align: left;
-      }
-      .testimonials {
-          padding: 40px 20px;
-          background: blur(20%);
-          margin-top: 40px;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-      .site-header {
-          
-          background: linear-gradient(217deg, rgba(0, 0, 0, 0.8), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(66, 11, 11, 0.8), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgba(95, 95, 128, 0.8), rgba(0,0,255,0) 70.71%);
-          color: white;
-          padding: 15px 30px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: relative;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-      .logo  {
-          height: 80px;
-          font-size: 1.6rem;
-          margin-top: -20px;
-        
-          text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-          transform: translateX(10%);
-          transform: translateY(-10%);
-          cursor: pointer;
-          font-family: 'Trebuchet MS';
-         
-      }
-      .logo:hover{
-        color: #e9ecef;
-        transform: scale(1.1);
-        transition: 0.5s;
-      }
-
-    
-      
-      .contact-button {
-          margin-left: 350px;
-          background-color: #FFCC00;
-          color: black;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
-          transform: translateX(100px);
-         box-shadow: 0 0 25px #FFCC00, 0 0 30px #FFCC00, 0 0 35px #e66465;
-      }
-      .contact-button:hover {
-          background-color: #FFC300;
-      }
-      .social-icons {
-          display: flex;
-          transform: translateX(10px);
-      }
-      .social-icon {
-          color: white;
-          text-decoration: none;
-          margin-left: 15px;
-          font-size: 18px;
-          transition: color 0.3s;
-      }
-      .social-icon:hover {
-          color: #FFCC00;
-      }
-      .search {
-          margin-left: 55px;
-          width: 500px;
-          height: 20px;
-          font-family: 'Roboto Slab', serif;
-          font-style: italic;
-          text-transform: uppercase;
-          border-radius: 25px 0 0 25px;
-        }
-        .search:hover {
-        color: red;
-        background: white;
-      }
-      .search-button {
-          margin-left: -96px;
-          padding: 5px 10px;
-          background: linear-gradient(#fff, #000);
-          color: rgb(7, 7, 7);
-          border: none;
-          border-radius: 0 25px 25px 0;
-          cursor: pointer;
-          transition: background-color 0.3s;
-      }
-      .search-button:hover {
-          background-color: #0056b3;
-          
-      }
-      .London{
-          margin-left: 100px;
-          cursor: pointer;
-      }
-      .Olimp {
-          cursor: pointer;
-      }
-      .games-section {
-      text-align: center;
-      border-radius: 8px;
-       background: blur(20%);
-      }
-      .fort{
-          text-align: left;
-      }
-      
-      .cham   {
-        border-radius: 40%;
-         box-shadow: 0 0 20px #fff, 0 0 25px #fff, 0 0 35px #fff;
-         background: whitesmoke;
-         color: #000;
-      }
-    </style>
   </head>
-  <body>
-
+  <body >
+    
     <header class="site-header">
       <div class="logo">
         <h1 class="cham">Chamelion</h1>
@@ -296,14 +52,34 @@
       <a href="http://127.0.0.1:5501/my2/" class="profile"
         ><i class="fa-solid fa-user fa-beat-fade"></i
       ></a>
+      <button id="openRegistration" class="regist">Регистрация</button>
     </nav>
-    <main>
+    <main id="mainContent" >
+     
       <div class="content" id="home">
+        <div class="background">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
         <h2>Добро Пожаловать!</h2>
         <p>Здесь вы найдете много интересного и полезного контента.</p>
       </div>
 
       <div id="courses" class="service-section">
+        <div class="background">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
         <h2 style="text-align: center; margin-bottom: 30px;" >Курсы</h2>
         <div class="service" style="animation-delay: 0.2s">
           <i class="fas fa-code fa-3x" style="color: #4a90e2"></i>
@@ -366,14 +142,17 @@
         <a href="#terms">Условия использования</a>
       </p>
     </footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        console.log('Сайт загружен!');
-        const services = document.querySelectorAll('.service');
-        services.forEach((service, index) => {
-          service.style.animationDelay = `${index * 0.2}s`;
-        });
-      });
-    </script>
+    <div class="overlayx" id="overlay"></div>
+  <div class="registration-form" id="registrationForm">
+    <h3>Регистрация</h3>
+    <form id="registerForm">
+      <input type="text" placeholder="Имя" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Пароль" required>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <button id="closeRegistration">Закрыть</button>
+  </div>
+    <script src="script.js"></script>
   </body>
 </html>
