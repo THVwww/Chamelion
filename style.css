@@ -50,8 +50,12 @@ main {
   }
 }
 .content {
-    text-align: center;
-    margin: 20px 0;
+  position: relative;
+  z-index: 10; /* Чтобы контент был поверх фона */
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-top: 20%;
 }
 .service-section {
     background: blur(20%);
@@ -159,7 +163,17 @@ footer {
   color: #e9ecef;
   transform: scale(1.1);
   transition: 0.5s;
+  animation: rotate 0.5s ease-in-out ;
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 
@@ -327,9 +341,13 @@ nav a {
   }
   /* Стили для движущихся элементов */
   .circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2); /* Полупрозрачные круги */
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8); /* Полупрозрачные круги */
+      cursor: grab; /* Курсор для захвата */
+    
     animation: move 10s infinite ease-in-out; /* Анимация движения */
   }
 
@@ -362,67 +380,73 @@ nav a {
     height: 60px;
     top: 66%;
     left: 95%;
-    animation-duration: 7s;
+    animation-duration: 8s;
   }
   .circle:nth-child(5) {
     width: 60px;
     height: 60px;
     top: 72%;
     left: 100%;
-    animation-duration: 7s;
+    animation-duration: 9s;
   }
   .circle:nth-child(6) {
     width: 60px;
     height: 60px;
     top: 93%;
     left: 75%;
-    animation-duration: 7s;
+    animation-duration: 10s;
   }
   .circle:nth-child(7) {
     width: 60px;
     height: 60px;
     top: 37%;
     left: 82%;
-    animation-duration: 7s;
+    animation-duration: 11s;
   }
   .circle:nth-child(8) {
     width: 60px;
     height: 60px;
     top: 39%;
     left: 36%;
-    animation-duration: 7s;
+    animation-duration: 12s;
   }
   .circle:nth-child(9) {
     width: 60px;
     height: 60px;
     top: 52%;
     left: 14%;
-    animation-duration: 7s;
+    animation-duration: 13s;
   }
   .circle:nth-child(10) {
     width: 60px;
     height: 60px;
     top: 64%;
     left: 9%;
-    animation-duration: 7s;
+    animation-duration: 14s;
   }
   .circle:nth-child(11) {
     width: 60px;
     height: 60px;
     top: 90%;
     left: 1%;
-    animation-duration: 7s;
+    animation-duration: 15s;
   }
 /* Анимация движения */
 @keyframes move {
     0% {
-      transform: translateY(0) translateX(0);
+      transform: translateY(0) translateX(0) scale(1);
+      background-color: #ccc;
+    
     }
     50% {
-      transform: translateY(100px) translateX(100px);
+      transform: translateY(100px) translateX(100px) scale(1.5);
+      background-color: #FFC300;
+     
     }
     100% {
-      transform: translateY(0) translateX(0);
+      transform: translateY(0) translateX(0) scale(1);
+      background-color: #ccc;
+     
     }
     
   }
