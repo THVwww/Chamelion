@@ -41,52 +41,60 @@ const openRegistrationButton = document.getElementById('openRegistration');
       service.style.animationDelay = `${index * 0.2}s`;
     });
   });
-  // Получаем все кружки
-  const circles = document.querySelectorAll('.circle');
+  // Функция для создания звезд
+function createStars(count) {
+  const background = document.querySelector('.background');
 
-  let isDragging = false; // Флаг для отслеживания состояния перетаскивания
-  let currentCircle = null; // Текущий выбранный кружок
-  let offsetX = 0; // Смещение по X
-  let offsetY = 0; // Смещение по Y
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
 
-  // Добавляем обработчики событий для каждого кружка
-  circles.forEach(circle => {
-    circle.addEventListener('mousedown', (event) => {
-      isDragging = true;
-      currentCircle = circle;
+    // Генерация случайных позиций
+    const x = Math.random() * window.innerWidth * 2.5;
+    const y = Math.random() * window.innerHeight * 2.5;
 
-      // Полностью отключаем анимацию
-      currentCircle.style.animation = 'none';
-      currentCircle.style.transition = 'none';
+    // Генерация случайной задержки для анимации
+    const delay = Math.random() * 5; // От 0 до 5 секунд
 
-      // Вычисляем смещение относительно курсора
-      const rect = circle.getBoundingClientRect();
-      offsetX = event.clientX - rect.left;
-      offsetY = event.clientY - rect.top;
+    // Применяем стили
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.animationDelay = `${delay}s`;
 
-      circle.style.cursor = 'grabbing';
-    });
-  });
-  // Обработчик движения мыши
-  document.addEventListener('mousemove', (event) => {
-    if (isDragging && currentCircle) {
-      // Перемещаем кружок
-      currentCircle.style.left = `${event.clientX - offsetX}px`;
-      currentCircle.style.top = `${event.clientY - offsetY}px`;
-    }
-  });
+    // Добавляем звезду в контейнер
+    background.appendChild(star);
+  }
+}
 
-  // Обработчик отпускания кнопки мыши
-  document.addEventListener('mouseup', () => {
-    if (isDragging) {
-      isDragging = false;
-      currentCircle.style.cursor = 'grab';
+// Создаем 200 звезд
+createStars(600);
+window.addEventListener('resize', () => {
+  document.querySelector('.background').innerHTML = '';
+  createStars(600);
+});
 
-      // Включаем анимацию через короткую задержку
-      setTimeout(() => {
-        currentCircle.style.animation = '';
-      }, 10);
+function fallingStar(count) {
+  const background = document.querySelector('.background');
 
-      currentCircle = null;
-    }
-  });
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('falling-star');
+
+    // Генерация случайных позиций
+    const x = Math.random() * window.innerWidth * 2;
+    const y = Math.random() * window.innerHeight * 2;
+
+    // Генерация случайной задержки для анимации
+    const delay = Math.random() * 5;
+
+    // Применяем стили
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    star.style.animationDelay = `${delay}s`;
+
+    // Добавляем звезду в контейнер
+    background.appendChild(star);
+  }
+}
+fallingStar(50)
+
